@@ -4,16 +4,17 @@ main {
     height:100vh;
     margin: 0px;
     padding: 0px;
+    font-size: 16px;
 }
 
 main {
     display: grid;
     grid-template-areas: 
-        "back   .   .   data"
-        ".      .   .   data"
-        ".      .   .   ."
-        "facts  .   .   .";
-    grid-template-columns: 1fr 2fr 2fr 1fr;
+        "back   title    title    ."
+        ".      planet   planet   data"
+        ".      planet   planet   data"
+        "facts  .        .        .";
+    grid-template-columns: 1.5fr 2fr 2fr 1.5fr;
     grid-template-rows: 1fr 1fr 1fr 1fr;
 }
 
@@ -21,6 +22,30 @@ main {
     grid-area: data;
 
     background-color: grey;
+}
+
+.back-arrow {
+    display: inline-block;  /* ensures only the icon itself is clickable */
+    grid-area: back;
+
+    font-size: 3rem;
+
+    justify-self: start;
+    cursor: pointer;
+}
+
+.title {
+    grid-area: title;
+    justify-self: center;
+    align-self: center;
+
+    font-size: 4rem;
+}
+
+.planet-container {
+    grid-area: planet;
+
+    background-color: #ccc;
 }
 
 .facts-container {
