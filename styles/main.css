@@ -22,8 +22,8 @@ body {
 
 .planet {
     /* Scale width based on view width, but max width is 150px */
-    width: 8vw;
-    max-width: 120px;
+    width: 10vw;
+    max-width: 150px;
     height: auto;
 
     object-fit: contain;
@@ -44,8 +44,8 @@ body {
 
 .non-planet {
     /* Scale width based on view width, but max width is 150px */
-    width: 8vw;
-    max-width: 120px;
+    width: 10vw;
+    max-width: 150px;
     height: auto;
 
     object-fit: contain;
@@ -59,19 +59,19 @@ body {
 }
 
 #mercury {
-    
+    width: 2vw;
 }
 
 #venus {
-    
+    width: 3.5vw;
 }
 
 #earth {
-    
+    width: 4.0vw;
 }
 
 #mars {
-    
+    width: 3vw;
 }
 
 #jupiter {
@@ -79,13 +79,13 @@ body {
 }
 
 #saturn {
-
-}
-
-#uranus {
     
 }
 
-#neptune {
+#uranus {
+    width: 5vw;
+}
 
+#neptune {
+    width: 4.5vw;
 }
