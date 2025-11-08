@@ -34,12 +34,12 @@ body {
 
     /* Effects should be non instant, cursor should be a pointer while hovering */
     cursor: pointer;
-    transition: transform 0.2s;
+    transition: transform 0.4s;
 }   
 
 .planet:hover {
     /* Enlarge while hovering */
-    transform: scale(1.2);
+    transform: scale(1.5);
 }
 
 /* Glow effect on planets */
@@ -92,5 +92,6 @@ img.planet:hover {
 }
 
 #neptune {
+    padding-right: 2vw;
     width: 4.5vw;
 }

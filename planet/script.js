@@ -29,7 +29,7 @@ window.onload = () => {
     container.appendChild(renderer.domElement);
 
     // Create geometry + material with texture
-    const geometry = new THREE.SphereGeometry(15, 32, 32);
+    const geometry = new THREE.SphereGeometry(23, 32, 32);
     const texture = new THREE.TextureLoader().load(`../textures/${hash}.jpg`);
     const material = new THREE.MeshPhongMaterial({ map: texture, shininess: 10 });
     const sphere = new THREE.Mesh(geometry, material);
