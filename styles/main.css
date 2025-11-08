@@ -7,10 +7,11 @@
     align-items: center;
     gap: 20px;
 
-    background-image: url("media/space.jpg");
+    background-color: black;
+    /* background-image: url("media/space.jpg");
     background-size: cover;
     background-repeat: no-repeat;
-    background-position: center;
+    background-position: center; */
 }
 
 .planet {
@@ -21,9 +22,9 @@
 
     object-fit: contain;
 
-    background-color: grey;
+    background-color: transparent;
     /* Reduce clickable area */
-    border-radius: 30%;
+    border-radius: 70%;
 
     /* Effects should be non instant, cursor should be a pointer while hovering */
     cursor: pointer;
@@ -32,7 +33,7 @@
 
 .planet:hover {
     /* Enlarge while hovering */
-    transform: scale(1.1);
+    transform: scale(1.2);
 }
 
 #mercury {
@@ -56,7 +57,7 @@
 }
 
 #saturn {
-    
+
 }
 
 #uranus {
