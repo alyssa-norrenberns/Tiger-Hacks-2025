@@ -1,0 +1,68 @@
+.planet-container {
+    width: 100vw;
+    height: 100vh;
+
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    gap: 20px;
+
+    background-image: url("media/space.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.planet {
+    /* Scale width based on view width, but max width is 150px */
+    width: 10vw;
+    max-width: 150px;
+    height: auto;
+
+    object-fit: contain;
+
+    background-color: grey;
+    /* Reduce clickable area */
+    border-radius: 30%;
+
+    /* Effects should be non instant, cursor should be a pointer while hovering */
+    cursor: pointer;
+    transition: transform 0.2s;
+}   
+
+.planet:hover {
+    /* Enlarge while hovering */
+    transform: scale(1.1);
+}
+
+#mercury {
+    
+}
+
+#venus {
+    
+}
+
+#earth {
+    
+}
+
+#mars {
+    
+}
+
+#jupiter {
+    
+}
+
+#saturn {
+    
+}
+
+#uranus {
+    
+}
+
+#neptune {
+    
+}
