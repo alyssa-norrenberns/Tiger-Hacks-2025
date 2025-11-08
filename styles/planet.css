@@ -1,9 +1,13 @@
+html, body {
+    margin: 0px;
+    padding: 0px;
+    overflow: hidden;
+}
+
 /* Reset default spacing */
 main {
     width: 100vw;
     height:100vh;
-    margin: 0px;
-    padding: 0px;
 
     font-family: "Poppins", Times, serif;
     font-weight: 400;

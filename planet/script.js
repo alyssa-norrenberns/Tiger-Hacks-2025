@@ -35,10 +35,10 @@ window.onload = () => {
     const sphere = new THREE.Mesh(geometry, material);
     scene.add(sphere);
 
-    const light = new THREE.DirectionalLight(0xffffff, 1.5);
+    const light = new THREE.DirectionalLight(0xffffff, 3);
     light.position.set(50, 50, 50);
     scene.add(light);
-    scene.add(new THREE.AmbientLight(0xffffff, 0.5));
+    scene.add(new THREE.AmbientLight(0xffffff, 0.2));
 
     // Animation loop (where the sphere is drawn)
     function animate() {
