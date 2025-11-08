@@ -27,6 +27,7 @@ main {
 .back-arrow {
     display: inline-block;  /* ensures only the icon itself is clickable */
     grid-area: back;
+    margin: 15px;
 
     font-size: 3rem;
 
