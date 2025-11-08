@@ -1,0 +1,30 @@
+/* Reset default spacing */
+main {
+    width: 100vw;
+    height:100vh;
+    margin: 0px;
+    padding: 0px;
+}
+
+main {
+    display: grid;
+    grid-template-areas: 
+        "back   .   .   data"
+        ".      .   .   data"
+        ".      .   .   ."
+        "facts  .   .   .";
+    grid-template-columns: 1fr 2fr 2fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr 1fr;
+}
+
+.data-container {
+    grid-area: data;
+
+    background-color: grey;
+}
+
+.facts-container {
+    grid-area: facts;
+
+    background-color: grey;
+}

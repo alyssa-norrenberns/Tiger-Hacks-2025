@@ -5,7 +5,7 @@ export function setupPlanetClicks() {
     planets.forEach((planet) => {
         planet.addEventListener("click", () => {
             const planetName = planet.id;
-            window.location.href = `/planet/${planetName}`
+            window.location.href = `planet/#${planetName}`;
         });
     });
 }
