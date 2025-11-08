@@ -20,7 +20,7 @@ class Mercury:
         
         self.mantle = '30%'          #% of Mercury that mantle takes up
         self.mantle_MgO = '22%'      #% of mantle that MgO takes up
-        self.mantle_SiO = '25%'        #% of mantle that CaO takes up  
+        self.mantle_SiO = '25%'        #% of mantle that SiO takes up  
         self.mantle_CaO = '5%'         #% of mantle that CaO takes up
         self.mantle_AlO = '5%'          #% of mantle that AlO takes up
         self.mantle_FeO =  '3%'          #% of mantle that FeO takes up
