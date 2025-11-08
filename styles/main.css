@@ -1,23 +1,29 @@
-.planet-container {
-    width: 100vw;
-    height: 100vh;
-
-    display: flex;
-    justify-content: space-evenly;
-    align-items: center;
-    gap: 20px;
-
+body {
+    overflow: hidden;
     background-color: black;
+    margin: 0px;
+    padding: 0px;
+
+    /* if we use a space bg instead of solid black */
     /* background-image: url("media/space.jpg");
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center; */
 }
 
+.planet-container {
+    width: 100%;
+    height: 100vh;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
 .planet {
     /* Scale width based on view width, but max width is 150px */
-    width: 10vw;
-    max-width: 150px;
+    width: 8vw;
+    max-width: 120px;
     height: auto;
 
     object-fit: contain;
@@ -34,6 +40,22 @@
 .planet:hover {
     /* Enlarge while hovering */
     transform: scale(1.2);
+}
+
+.non-planet {
+    /* Scale width based on view width, but max width is 150px */
+    width: 8vw;
+    max-width: 120px;
+    height: auto;
+
+    object-fit: contain;
+
+    background-color: transparent;
+    border-radius: 0%;
+}
+
+#sun {
+    justify-self: flex-start;
 }
 
 #mercury {
@@ -65,5 +87,5 @@
 }
 
 #neptune {
-    
+
 }
