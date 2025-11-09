@@ -60,3 +60,82 @@ export function setTitle(hash) {
     const titleElement = document.querySelector(".title");
     titleElement.textContent = hash.charAt(0).toUpperCase() + hash.slice(1);
 }
+
+export function showCalendar(data, hash) {
+    const container = document.querySelector(".data-container");
+
+    // Find the existing Calendar Info list in the page and replace its contents
+    const calendarList = container.querySelector('ul.space-mono-regular');
+    if (!calendarList) {
+        // Fallback: append a new list if the expected element is missing
+        const fallback = document.createElement('ul');
+        fallback.classList.add('space-mono-regular');
+        container.appendChild(fallback);
+    }
+
+    const ul = container.querySelector('ul.space-mono-regular');
+    // Clear existing items
+    ul.innerHTML = '';
+
+    const liTitle = document.createElement('li');
+    liTitle.textContent = `${data.planet_title} — Calendar Info`;
+    liTitle.classList.add('space-mono-bold', 'font-medium');
+    ul.appendChild(liTitle);
+
+    const liDaysPerYear = document.createElement('li');
+    liDaysPerYear.textContent = `Days per year: ${data.days_per_year}`;
+    ul.appendChild(liDaysPerYear);
+
+    const liDayLength = document.createElement('li');
+    liDayLength.textContent = `Day length (hours): ${data.day_length_hours}`;
+    ul.appendChild(liDayLength);
+
+    const liPlanetDays = document.createElement('li');
+    liPlanetDays.textContent = `Planet days since Earth Jan 1: ${data.planet_days_since_jan_1}`;
+    ul.appendChild(liPlanetDays);
+
+    if (data.earth_days_since_jan_1 !== null && data.earth_days_since_jan_1 !== undefined) {
+        const liEarthDays = document.createElement('li');
+        liEarthDays.textContent = `Earth days since Jan 1: ${data.earth_days_since_jan_1}`;
+        ul.appendChild(liEarthDays);
+    }
+}
+
+export function showLoading(message = 'Loading…') {
+    const container = document.querySelector('.data-container');
+    // remove previous error
+    const prevErr = container.querySelector('.api-error');
+    if (prevErr) prevErr.remove();
+
+    let el = container.querySelector('.api-loading');
+    if (!el) {
+        el = document.createElement('p');
+        el.classList.add('api-loading');
+        el.style.fontFamily = '"Space Mono", monospace';
+        el.style.color = '#aaa';
+        container.appendChild(el);
+    }
+    el.textContent = message;
+}
+
+export function hideLoading() {
+    const container = document.querySelector('.data-container');
+    const el = container.querySelector('.api-loading');
+    if (el) el.remove();
+}
+
+export function showError(message) {
+    const container = document.querySelector('.data-container');
+    // remove previous loading
+    hideLoading();
+    // remove previous error
+    const prev = container.querySelector('.api-error');
+    if (prev) prev.remove();
+
+    const err = document.createElement('p');
+    err.classList.add('api-error');
+    err.style.color = 'crimson';
+    err.style.fontFamily = '"Space Mono", monospace';
+    err.textContent = message;
+    container.appendChild(err);
+}
