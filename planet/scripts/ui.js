@@ -1,15 +1,4 @@
-// Back button functionality
-const backButton = document.querySelector(".back-arrow");
-backButton.addEventListener("click", () => {
-    window.location.href = "/";
-});
-
-// Dyanmically set title as hash in url
-const hash = window.location.hash.substring(1); // Substring removes the #
-const titleElement = document.querySelector(".title");
-titleElement.textContent = hash.charAt(0).toUpperCase() + hash.slice(1);
-
-window.onload = () => {
+export function loadPlanet(hash) {
     const container = document.querySelector(".planet-container");
     // Make scene for object
     const scene = new THREE.Scene();
@@ -30,7 +19,7 @@ window.onload = () => {
 
     // Create geometry + material with texture
     const geometry = new THREE.SphereGeometry(23, 32, 32);
-    const texture = new THREE.TextureLoader().load(`../textures/${hash}.jpg`);
+    const texture = new THREE.TextureLoader().load(`../../textures/${hash}.jpg`);
     const material = new THREE.MeshPhongMaterial({ map: texture, shininess: 10 });
     const sphere = new THREE.Mesh(geometry, material);
     scene.add(sphere);
@@ -59,3 +48,15 @@ window.onload = () => {
         renderer.setSize(container.clientWidth, container.clientHeight);
     });
 };
+
+export function setUpBackButton() {
+    const backButton = document.querySelector(".back-arrow");
+    backButton.addEventListener("click", () => {
+        window.location.href = "/";
+    });
+};
+
+export function setTitle(hash) {
+    const titleElement = document.querySelector(".title");
+    titleElement.textContent = hash.charAt(0).toUpperCase() + hash.slice(1);
+}
