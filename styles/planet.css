@@ -30,11 +30,26 @@ main {
     grid-template-rows: 1fr 1fr 1fr 1fr;
 }
 
+hr {
+    border: none;
+    background-color: black;
+    height: 1px;
+}
+
 .data-container {
     grid-area: data;
 
-    background-color: grey;
+    background-color: rgb(192, 225, 255);
     padding: 2vw;
+
+    min-width: 20vw;
+    max-height: 30vw;
+    min-height: 25vw;
+
+    border-radius: 45px;
+    border: 7px solid white;
+    margin: 2vw;
+    
 }
 
 .back-arrow {
