@@ -1,13 +1,25 @@
 from flask import Flask, request, jsonify, Blueprint
+from flask_cors import cross_origin
 from datetime import date
 
 planet_bp = Blueprint("planet", __name__)
 
-@planet_bp.route("/", methods=["GET"])
+@planet_bp.route("/", methods=["GET", "POST"])
+@planet_bp.route("/calendar", methods=["GET", "POST"])
+@planet_bp.route("/calander", methods=["GET", "POST"])
+
+@cross_origin()
 def planetCalendars():
-    
-    data = request.get_json()
-    planet = data.get("planet")
+    # Support GET with query param ?planet=... and POST with JSON { planet: ... }
+    planet = None
+    if request.method == "GET":
+        planet = request.args.get("planet")
+    else:
+        data = request.get_json() or {}
+        planet = data.get("planet")
+
+    if not planet:
+        return jsonify({"error": "Missing 'planet' parameter"}), 400
 
     planet = planet.lower().strip()
     
@@ -35,7 +47,7 @@ def planetCalendars():
     }
     
     if planet not in orbitalPeriods:
-        raise ValueError(f"Unknown planet: {planet}")
+        return jsonify({"error": f"Unknown planet: {planet}"}), 400
     
     today = date.today()
     jan1 = date(today.year, 1, 1)
