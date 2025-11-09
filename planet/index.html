@@ -10,13 +10,25 @@
     />
     <link rel="stylesheet" href="../styles/planet.css">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
 </head>
 <body>
     <main>
         <img class="back-arrow" src="../media/arrow-back.svg"></img>
-        <h1 class="title"></h1>
+        <h1 class="title orbitron-500"></h1>
         <div class="planet-container"></div>
-        <div class="data-container"></div>
+        <div class="data-container">
+            <p class="space-mono-bold font-medium">Planet Data Info:</p>
+            <ul>
+                <li>This is a space fact</li>
+                <li>Another fact about the universe</li>
+                <li>Planet spinning in space woooooooo</li>
+            </ul>
+        </div>
         <div class="facts-container"></div>
     </main>
     <script src="https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.min.js"></script>

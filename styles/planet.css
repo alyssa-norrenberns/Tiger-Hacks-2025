@@ -34,6 +34,7 @@ main {
     grid-area: data;
 
     background-color: grey;
+    padding: 2vw;
 }
 
 .back-arrow {
@@ -70,4 +71,28 @@ main {
     grid-area: facts;
 
     background-color: grey;
+}
+
+.orbitron-500 {
+    font-family: "Orbitron", sans-serif;
+    /* font-optical-sizing: auto; */
+    font-weight: 500;
+    font-style: normal;
+    font-size: 16;
+}
+
+.space-mono-regular {
+  font-family: "Space Mono", monospace;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.space-mono-bold {
+  font-family: "Space Mono", monospace;
+  font-weight: 700;
+  font-style: normal;
+}
+
+.font-medium {
+    font-size: 30;
 }
