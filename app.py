@@ -1,10 +1,9 @@
-from flask import Flask, request, jsonify
-from routes.test import test_bp
+from routes.test import planet_bp
 
 app = Flask(__name__)
 
 # Register blueprints
-app.register_blueprint(test_bp, url_prefix="/test")
+app.register_blueprint(planet_bp, url_prefix="/planet")
 
 if __name__ == "__main__":
     app.run(debug=True)
