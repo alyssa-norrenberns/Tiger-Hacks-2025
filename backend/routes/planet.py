@@ -3,7 +3,7 @@ from datetime import date
 
 planet_bp = Blueprint("planet", __name__)
 
-@planet_bp.route("/calendar", methods=["GET"])
+@planet_bp.route("/", methods=["GET"])
 def planetCalendars():
     
     data = request.get_json()

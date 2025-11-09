@@ -1,6 +1,9 @@
-async function getCalander() {
+const API_BASE_URL = "http://127.0.0.1:5050/";
+
+
+export async function getCalendar(hash) {
     try {
-        const response = await fetch(`${API_BASE_URL}planet/calander?=planet${hash}`, {
+        const response = await fetch(`${API_BASE_URL}planet/calander?=${hash}`, {
             method: "GET",
             headers: {
                 "Content-Type": "application/json"

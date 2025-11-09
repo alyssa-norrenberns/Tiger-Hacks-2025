@@ -1,4 +1,5 @@
 import { loadPlanet, setUpBackButton, setTitle } from "./ui.js";
+import { getCalendar } from "./api.js";
 
 document.addEventListener("DOMContentLoaded", () => {
     // Get the planet we are on
@@ -7,4 +8,5 @@ document.addEventListener("DOMContentLoaded", () => {
     setUpBackButton();
     setTitle(hash);
     loadPlanet(hash);
+    const calanderData = getCalendar(hash);
 });
