@@ -1,4 +1,4 @@
-from flask import Flask, request, jsonify
+from flask import Flask, request, jsonify, Blueprint
 from datetime import date
 
 planet_bp = Blueprint("planet", __name__)
@@ -56,7 +56,10 @@ def planetCalendars():
 
     print(ouput)
 
-    return jsonify({"planet_title": planet.title(),
-                    "days_per_yearround": (days_per_year),
-                    "day_length": abs(round(day_len)),
-                    "planet_days_since_Jan_1": round(planet_days)})
+    return jsonify({
+        "planet_title": planet.title(),
+        "days_per_year": round(days_per_year),
+        "day_length_hours": round(abs(day_len), 2),
+        "planet_days_since_jan_1": round(planet_days),
+        "earth_days_since_jan_1": earth_days_since_jan1 if planet != "earth" else None
+    })
